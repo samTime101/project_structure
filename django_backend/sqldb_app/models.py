@@ -53,6 +53,7 @@ class CustomUserManager(BaseUserManager):
             **extra_fields
         )
 
+# USER MODEL
 class User(AbstractBaseUser, PermissionsMixin):
     userId = models.AutoField(primary_key=True)
     userGuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
@@ -79,3 +80,19 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+# CATEGORY MODELS
+class Category(models.Model):
+    categoryId = models.AutoField(primary_key=True)
+    categoryName = models.CharField(max_length=20)
+
+
+class SubCategory(models.Model):
+    subCategoryId = models.AutoField(primary_key=True)
+    subCategoryName = models.CharField(max_length=20)
+    categoryID = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+class SubSubCategory(models.Model):
+    subSubCategoryId = models.AutoField(primary_key=True)
+    subSubCategoryName = models.CharField(max_length=20)
+    subCategoryID = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
