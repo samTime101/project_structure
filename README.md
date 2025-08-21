@@ -70,11 +70,17 @@ python3 manage.py createsuperuser
 
 
 ## DJANGO SERVER
+
+**directory:`project_structure/`**
+
 ```
 python3 manage.py runserver
 ```
 
 ## FRONT END 
+
+**directory:`react_frontend/`**
+
 ```
 npm run 
 ```
