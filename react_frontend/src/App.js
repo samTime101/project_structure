@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+// REFERENCED FROM https://www.geeksforgeeks.org/reactjs/how-to-connect-django-with-reactjs/
+// ADDED BY SAMIP REGMI
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react';
+import axios from 'axios';
+
+class App extends React.Component {
+
+    state = {
+        details : [],
+    }
+
+    componentDidMount() {
+
+        let data ;
+
+        axios.get('http://localhost:8000/api/signup/')
+        .then(res => {
+            data = res.data;
+            this.setState({
+                details : data    
+            });
+        })
+        .catch(err => {})
+    }
+
+  render() {
+    return(
+      <div>
+            {this.state.details.map((detail, id) =>  (
+            <div key={id}>
+            <div >
+                  <div >
+                        <h1>REACT APP HELLOOOO</h1>
+                        <h1>DATA FROM API</h1>
+
+                        <footer > 
+                        <p>username: {detail.username}</p>
+                        <p>email: {detail.email}</p>
+                        <p>first name: {detail.firstname}</p>
+                        <p>last name: {detail.lastname}</p>
+                        <p>is active: {detail.is_active ? 'Yes' : 'No'}</p>
+                        <p>is staff: {detail.is_staff ? 'Yes' : 'No'}</p>
+                        <p>{detail.is_superuser ? 'Yes' : 'No'}</p>
+                        </footer>
+                  </div>
+            </div>
+            </div>
+            )
+        )}
+      </div>
+      );
+  }
 }
 
 export default App;

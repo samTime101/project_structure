@@ -3,18 +3,24 @@
 
 ## TODO
 
-- [ ] create views for signin
-- [ ] create SQLITE models for signin
-- [ ] connect react signin with django
+- [x] create views for signin
+- [x] create SQLITE models for signin
+- [x] connect react signin with django
 
 ## TO RUN PROJECT
 
 ```
-npm run build
+python3 manage.py makemigrations signin_app
+python3 manage.py migrate
+python3 manage.py createsuperuser
 ```
-
-then
 
 ```
 python3 manage.py runserver
 ```
+
+```
+npm run 
+```
+
+
