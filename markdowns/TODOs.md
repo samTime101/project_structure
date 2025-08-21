@@ -1,10 +1,5 @@
 ## TODO
 
-### SQL (sqldb_app)
-- [ ] Add models: 
-  - `Role`
-  - `UserRole`
-
 ### MONGO
 - [ ] Add mongo
 
@@ -28,3 +23,6 @@
 - [x] Done `/api/signin`
 - [x] Done `/api/signup`
 - [x] Done `/api/user`
+- [x] Add models: 
+  - `Role`
+  - `UserRole`
