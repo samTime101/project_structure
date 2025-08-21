@@ -13,11 +13,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',  # ADDED BY SAMIP REGMI
+    'rest_framework',  # ADDED BY SAMIP REGMI
+    "rest_framework.authtoken", # ADDED BY SAMIP REGMI
+    'dj_rest_auth',  # ADDED BY SAMIP REGMI
     'sqldb_app',  # ADDED BY SAMIP REGMI
     'signup_app', # ADDED BY SAMIP REGMI
     'signin_app', # ADDED BY SAMIP REGMI
-    'rest_framework',  # ADDED BY SAMIP REGMI
-    'corsheaders',  # ADDED BY SAMIP REGMI
+    'user_data'
 ]
 
 MIDDLEWARE = [
@@ -36,6 +39,9 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',  # ADDED BY SAMIP REGMI
     ],
 }
 CORS_ORIGIN_ALLOW_ALL = True  # ADDED BY SAMIP REGMI
@@ -104,3 +110,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_AUTH = {
+    "USE_JWT": True,  # ADDED BY SAMIP REGMI
+    "JWT_AUTH_COOKIE":"mcq_project_cookie",  # ADDED BY SAMIP REGMI
+    "JWT_AUTH_REFRESH_COOKIE": "mcq_project_refresh_cookie",  # ADDED BY SAMIP REGMI
+}

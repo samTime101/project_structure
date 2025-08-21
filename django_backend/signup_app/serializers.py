@@ -8,7 +8,7 @@ class UserSignupSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         # SERIALIZE FIELDS, WILL RETURN ALL FIELDS EXCEPT PASS IN GET REQUEST
-        fields = ['userId','email', 'username', 'phonenumber', 'firstname', 'lastname', 'password']
+        fields = ['id','email', 'username', 'phonenumber', 'firstname', 'lastname', 'password']
         extra_kwargs = {'password': {'write_only': True}} # DONT RETURN PASSWORD IN RESPONSE
 
     def create(self, validated_data):

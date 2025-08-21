@@ -6,6 +6,8 @@ django_backend/signin_app/__pycache__/
 django_backend/signin_app/migrations/
 django_backend/sqldb_app/__pycache__/
 django_backend/sqldb_app/migrations/
+django_backend/user_data_app/__pycache__/
+django_backend/user_data_app/migrations/
 db.sqlite3
 
 # FOR REACT AND NODE

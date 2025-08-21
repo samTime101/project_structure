@@ -54,8 +54,11 @@ class CustomUserManager(BaseUserManager):
         )
 
 # USER MODEL
+# https://medium.com/@CodeUmwelt/django-rest-api-with-custom-user-model-jwt-cookie-authentication-configure-authentication-2b33076c4b8e
 class User(AbstractBaseUser, PermissionsMixin):
-    userId = models.AutoField(primary_key=True)
+    # ID IS AUTO CREATED BY DJANGO
+    # userId = models.AutoField(primary_key=True)  
+    
     userGuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(max_length=50, unique=True)
@@ -78,8 +81,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = "email" 
     REQUIRED_FIELDS = ["username", "phonenumber", "firstname", "lastname"]
 
-    def __str__(self):
-        return self.email
 
 # CATEGORY MODELS
 class Category(models.Model):
