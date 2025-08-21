@@ -2,6 +2,13 @@
 
 `API ENDPOINT:/api/signin`
 
+## RESPONSE FOR GET REQUEST(405)
+```json
+{
+    "detail": "Method \"GET\" not allowed."
+}
+```
+
 ## REQUEST FOR POST REQUEST
 
 ```json

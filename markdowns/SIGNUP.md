@@ -2,34 +2,10 @@
 
 `API ENDPOINT:/api/signup`
 
-## RESPONSE FOR GET REQUEST(200)
+## RESPONSE FOR GET REQUEST(405)
 ```json
 {
-    "message": "User list retrieved successfully",
-    "users": [
-        {
-            "userId": 1,
-            "email": "samipregminp@gmail.com",
-            "username": "samipregminp",
-            "phonenumber": "9842265590",
-            "firstname": "samip",
-            "lastname": "regmi",
-            "is_active": true,
-            "is_staff": true,
-            "is_superuser": true
-        },
-        {
-            "userId": 2,
-            "email": "john.doe@example.com",
-            "username": "john_doe",
-            "phonenumber": "9876543210",
-            "firstname": "John",
-            "lastname": "Doe",
-            "is_active": true,
-            "is_staff": false,
-            "is_superuser": false
-        }
-    ]
+    "detail": "Method \"GET\" not allowed."
 }
 ```
 
