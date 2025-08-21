@@ -2,6 +2,10 @@
 
 TODOS FOR THE PROJECT AT  [TODOs.md](./TODOs.md) 
 
+API INFORMATION AT [API_RESPONSE.md](./API_RESPONSE.md)
+
+---
+
 > [!NOTE]  
 > APP PROJECT TUTORIAL FOLLOWED FROM [HERE](https://www.geeksforgeeks.org/reactjs/how-to-connect-django-with-reactjs/)
 
