@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from .serializers import UserSignupSerializer
-
+from .models import User
 class SignUpView(APIView):
 
     permission_classes = [AllowAny]
@@ -17,7 +17,8 @@ class SignUpView(APIView):
         serializer.is_valid(raise_exception=True) # IF DATA IS INVALID RAISE EXCEPTION
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    # TEST
+    # ALLOW GET REQUESTS
     def get(self, request):
-        serializer = UserSignupSerializer(many=True)
+        users = User.objects.all()
+        serializer = UserSignupSerializer(users,many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
