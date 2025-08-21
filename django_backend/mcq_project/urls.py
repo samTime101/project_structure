@@ -19,6 +19,7 @@ from django.urls import path
 
 # ---------------_ADDED BY SAMIP REGMI---------------
 from signup_app.views import SignUpView
+from signin_app.views import SignInView
 # -----------------------------------------------------
 
 
@@ -26,5 +27,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # ------------__ADDED BY SAMIP REGMI---------------
     path('api/signup/',SignUpView.as_view(), name='signup'),
+    path('api/signin/', SignInView.as_view(), name='signin'),
     # ------------------------------------------------------
 ]
