@@ -1,8 +1,8 @@
 ![Author](https://img.shields.io/badge/author-samip--regmi-blue)
 
-TODOS FOR THE PROJECT AT  [TODOs.md](./TODOs.md) 
+TODOS FOR THE PROJECT AT  [TODOs.md](./markdowns/TODOs.md) 
 
-API INFORMATION AT [API_RESPONSE.md](./API_RESPONSE.md)
+API INFORMATION AT [API_RESPONSE.md](./markdowns/API_RESPONSE.md)
 
 ---
 
