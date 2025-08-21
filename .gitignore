@@ -1,0 +1,5 @@
+.env
+mcq_project/__pycache__/
+signin_app/__pycache__/
+signin_app/migrations/
+db.sqlite3
