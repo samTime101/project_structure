@@ -19,6 +19,7 @@ class SignUpView(APIView):
         response_data = {
             "message": "User created successfully",
             "user":{
+                "userId": user.userId,
                 "email": user.email,
                 "username": user.username,
                 "phonenumber": user.phonenumber,

@@ -2,7 +2,7 @@
 
 `API ENDPOINT:/api/signup`
 
-## RESPONSE FOR GET REQUEST
+## RESPONSE FOR GET REQUEST(200)
 ```json
 {
     "message": "User list retrieved successfully",
@@ -37,9 +37,9 @@
 
 ```json
 {
-    "email": "samip@example.com",
-    "username": "samip101",
-    "phonenumber": "9801234567",
+    "email": "new@new.com",
+    "username": "new101",
+    "phonenumber": "9801234566",
     "firstname": "Samip",
     "lastname": "Regmi",
     "password": "Superman123"
@@ -47,17 +47,34 @@
 
 ```
 
-## RESPONSE FOR THE FOLLOWING POST REQUEST
+## RESPONSE FOR THE FOLLOWING POST REQUEST(201)
 
 ```json
 {
     "message": "User created successfully",
     "user": {
-        "email": "samip@example.com",
-        "username": "samip101",
-        "phonenumber": "9801234567",
+        "userId": 5,
+        "email": "new@new.com",
+        "username": "new101",
+        "phonenumber": "9801234566",
         "firstname": "Samip",
         "lastname": "Regmi"
     }
+}
+```
+
+## IF REGISRETED USER TRIES TO SIGNIN WITH SAME CREDENTIALS(400)
+
+```json
+{
+    "email": [
+        "user with this email already exists."
+    ],
+    "username": [
+        "user with this username already exists."
+    ],
+    "phonenumber": [
+        "user with this phonenumber already exists."
+    ]
 }
 ```

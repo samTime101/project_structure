@@ -1,11 +1,11 @@
 .env
-mcq_project/__pycache__/
-signup_app/__pycache__/
-signup_app/migrations/
-signin_app/__pycache__/
-signin_app/migrations/
-sqldb_app/__pycache__/
-sqldb_app/migrations/
+django_backend/mcq_project/__pycache__/
+django_backend/signup_app/__pycache__/
+django_backend/signup_app/migrations/
+django_backend/signin_app/__pycache__/
+django_backend/signin_app/migrations/
+django_backend/sqldb_app/__pycache__/
+django_backend/sqldb_app/migrations/
 db.sqlite3
 
 # FOR REACT AND NODE

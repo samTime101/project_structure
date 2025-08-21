@@ -16,6 +16,7 @@ class SignInView(APIView):
         response_data = {
             "message": "User signed in successfully",
             "user": {
+                "userId": user.userId,
                 "email": user.email,
                 "username": user.username,
                 "phonenumber": user.phonenumber,
