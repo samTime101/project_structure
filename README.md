@@ -1,5 +1,10 @@
 ![Author](https://img.shields.io/badge/author-samip--regmi-blue)
 
+
+> [!IMPORTANT]  
+> CURRENT BRANCH i.e `feat/jwt` WAS RENAMED FROM `feat/auth_check` 
+
+
 TODOS FOR THE PROJECT AT  [TODOs.md](./markdowns/TODOs.md) 
 
 API INFORMATION AT [API_RESPONSE.md](./markdowns/API_RESPONSE.md)
