@@ -2,6 +2,10 @@
 mcq_project/__pycache__/
 signup_app/__pycache__/
 signup_app/migrations/
+signin_app/__pycache__/
+signin_app/migrations/
+sqldb_app/__pycache__/
+sqldb_app/migrations/
 db.sqlite3
 
 # FOR REACT AND NODE
