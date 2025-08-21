@@ -28,12 +28,3 @@ class SignUpView(APIView):
             }
         } 
         return Response(response_data, status=status.HTTP_201_CREATED)
-
-    def get(self, request):
-        users = User.objects.all()
-        serializer = UserSignupSerializer(users, many=True)
-        response_data = {
-            "message": "User list retrieved successfully",
-            "users": serializer.data
-        }
-        return Response(response_data, status=status.HTTP_200_OK)
