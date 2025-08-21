@@ -55,7 +55,7 @@ python3 -m pip install django-cors-headers
 
 ```
 cd react_frontend
-npm install bootstrap jquery axios
+npm install
 ```
 
 ## DATABASE
