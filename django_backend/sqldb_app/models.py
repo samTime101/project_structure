@@ -97,3 +97,16 @@ class SubSubCategory(models.Model):
     subSubCategoryId = models.AutoField(primary_key=True)
     subSubCategoryName = models.CharField(max_length=20)
     subCategoryID = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+
+
+
+# USER ROLES MODELS
+class Role(models.Model):
+    RoleId = models.AutoField(primary_key=True)
+    RoleName = models.CharField(max_length=20)
+    status = models.IntegerField(default=1)
+
+
+class UserRole(models.Model):
+    RoleID = models.ForeignKey(Role, on_delete=models.CASCADE)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
