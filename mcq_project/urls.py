@@ -18,13 +18,13 @@ from django.contrib import admin
 from django.urls import path
 
 # ---------------_ADDED BY SAMIP REGMI---------------
-from django.views.generic import TemplateView
+from signin_app.views import SignUpView
 # -----------------------------------------------------
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # ------------__ADDED BY SAMIP REGMI---------------
-    path('',TemplateView.as_view(template_name='index.html')),
+    path('api/signup/',SignUpView.as_view(), name='signup'),
     # ------------------------------------------------------
 ]
