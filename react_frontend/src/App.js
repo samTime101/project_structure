@@ -1,56 +1,36 @@
-// REFERENCED FROM https://www.geeksforgeeks.org/reactjs/how-to-connect-django-with-reactjs/
-// ADDED BY SAMIP REGMI
+//REFERENCED FROM  https://www.geeksforgeeks.org/reactjs/reactjs-componentdidmount-method/
+// SAMIP REGMI
+import React, { Component } from "react";
+class UsersList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      details: []  
+    };
+  }
 
-import React from 'react';
-import axios from 'axios';
-
-class App extends React.Component {
-
-    state = {
-        details : [],
-    }
-
-    componentDidMount() {
-
-        let data ;
-
-        axios.get('http://localhost:8000/api/signup/')
-        .then(res => {
-            data = res.data;
-            this.setState({
-                details : data    
-            });
-        })
-        .catch(err => {})
-    }
+  componentDidMount() {
+    fetch("http://localhost:8000/api/signup/") 
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ details: data.users });
+      });
+  }
 
   render() {
-    return(
+    return (
       <div>
-            {this.state.details.map((detail, id) =>  (
-            <div key={id}>
-            <div >
-                  <div >
-                        <h1>REACT APP HELLOOOO</h1>
-                        <h1>DATA FROM API</h1>
-
-                        <footer > 
-                        <p>username: {detail.username}</p>
-                        <p>email: {detail.email}</p>
-                        <p>first name: {detail.firstname}</p>
-                        <p>last name: {detail.lastname}</p>
-                        <p>is active: {detail.is_active ? 'Yes' : 'No'}</p>
-                        <p>is staff: {detail.is_staff ? 'Yes' : 'No'}</p>
-                        <p>{detail.is_superuser ? 'Yes' : 'No'}</p>
-                        </footer>
-                  </div>
-            </div>
-            </div>
-            )
-        )}
+        <h2>Users List</h2>
+        <ul>
+          {this.state.details.map(user => (
+            <li key={user.userId}>
+              {user.firstname} {user.lastname} - {user.email} - {user.username} - {user.phonenumber}
+            </li>
+          ))}
+        </ul>
       </div>
-      );
+    );
   }
 }
 
-export default App;
+export default UsersList;
