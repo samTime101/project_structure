@@ -11,10 +11,28 @@ class SignUpView(APIView):
     def post(self, request):
         serializer = UserSignupSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        user = serializer.save()
+        # DIRECTLY SEND SERIALIZER DATA 
+        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        #RETURNING CUSTOM RESPONSE
+        response_data = {
+            "message": "User created successfully",
+            "user":{
+                "email": user.email,
+                "username": user.username,
+                "phonenumber": user.phonenumber,
+                "firstname": user.firstname,
+                "lastname": user.lastname,
+            }
+        } 
+        return Response(response_data, status=status.HTTP_201_CREATED)
 
     def get(self, request):
         users = User.objects.all()
         serializer = UserSignupSerializer(users, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        response_data = {
+            "message": "User list retrieved successfully",
+            "users": serializer.data
+        }
+        return Response(response_data, status=status.HTTP_200_OK)
