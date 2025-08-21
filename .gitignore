@@ -1,7 +1,7 @@
 .env
 mcq_project/__pycache__/
-signin_app/__pycache__/
-signin_app/migrations/
+signup_app/__pycache__/
+signup_app/migrations/
 db.sqlite3
 
 # FOR REACT AND NODE

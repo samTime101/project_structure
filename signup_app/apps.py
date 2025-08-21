@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class SigninAppConfig(AppConfig):
+class SignUpAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'signin_app'
+    name = 'signup_app'

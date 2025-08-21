@@ -13,7 +13,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'signin_app', # ADDED BY SAMIP REGMI
+    'signup_app', # ADDED BY SAMIP REGMI
     'rest_framework',  # ADDED BY SAMIP REGMI
     'corsheaders',  # ADDED BY SAMIP REGMI
 ]
@@ -65,7 +65,7 @@ DATABASES = {
     }
 }
 # ---------------------ADDED BY SAMIP REGMI-------------------
-AUTH_USER_MODEL = 'signin_app.User'
+AUTH_USER_MODEL = 'signup_app.User'
 # ------------------------------------------------------------
 
 AUTH_PASSWORD_VALIDATORS = [

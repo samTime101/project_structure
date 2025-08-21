@@ -8,6 +8,7 @@ from rest_framework import status
 from rest_framework.permissions import AllowAny
 from .serializers import UserSignupSerializer
 from .models import User
+
 class SignUpView(APIView):
 
     permission_classes = [AllowAny]

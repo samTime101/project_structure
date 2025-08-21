@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 # ---------------_ADDED BY SAMIP REGMI---------------
-from signin_app.views import SignUpView
+from signup_app.views import SignUpView
 # -----------------------------------------------------
 
 
