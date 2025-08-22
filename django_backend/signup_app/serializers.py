@@ -12,8 +12,6 @@ class UserSignupSerializer(serializers.ModelSerializer):
         extra_kwargs = {'password': {'write_only': True}} # DONT RETURN PASSWORD IN RESPONSE
 
     def create(self, validated_data):
-        password = validated_data.pop('password')
+        #PASSWORD HASHING AND SAVING IS ALREADY HANDLED BY USER MODEL
         user = User.objects.create_user(**validated_data , is_active=True, is_staff=False ,is_superuser=False)
-        user.set_password(password)
-        user.save()
         return user

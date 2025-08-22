@@ -1,5 +1,8 @@
 
 from pathlib import Path
+from datetime import timedelta
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-yg$-iov^lsz7mv^6-oy)11!4^*mzr$!w#bb-y2jfpcs$n8)pxy'
 DEBUG = True
@@ -21,7 +24,8 @@ INSTALLED_APPS = [
     'signin_app', # ADDED BY SAMIP REGMI
     'user_data', #  ADDED BY SAMIP REGMI
     'sqldb_app',  # ADDED BY SAMIP REGMI
-    'mongodb_app' # ADDED BY SAMIP REGMI
+    'mongodb_app', # ADDED BY SAMIP REGMI
+    'create_category' #ADDED BY SAMIPREGMI
 ]
 
 MIDDLEWARE = [
@@ -113,7 +117,20 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_AUTH = {
-    "USE_JWT": True,  # ADDED BY SAMIP REGMI
-    "JWT_AUTH_COOKIE":"mcq_project_cookie",  # ADDED BY SAMIP REGMI
-    "JWT_AUTH_REFRESH_COOKIE": "mcq_project_refresh_cookie",  # ADDED BY SAMIP REGMI
+    "USE_JWT": True,
+    "JWT_AUTH_COOKIE": "mcq_project_cookie",
+    "JWT_AUTH_REFRESH_COOKIE": "mcq_project_refresh_cookie",
+}
+
+
+# REFERENCE https://pypi.org/project/djangorestframework-simplejwt/3.2/
+# ADDED FROM SETTINGS SECTION
+# ADDED BY SAMIP REGMI
+# FOR TESTING PURPOSES FROM POSTMAN BECAUSE JWT TOKEN WAS BEING EXPIRED
+# IN VERY SHORT TIME
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=12),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": True,
 }

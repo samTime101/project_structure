@@ -1,8 +1,11 @@
 ## TODO
 
-### MONGO(ON PROGRESS)
-- [ ] Add mongo
-
+### DJANGO(ROUTES)
+- [ ] `/api/create/subcategory`
+- [ ] `/api/create/subsubcategory`
+- [ ] `/api/create/question` **for admin**
+- [ ] `/api/select/questions` **when doing quiz**
+- [ ] `/api/get/questions`  **get questions with preferred selections**
 
 ### FRONTEND (REACT)
 - [ ] Implement Signup frontend using API
@@ -26,3 +29,5 @@
 - [x] Add models: 
   - `Role`
   - `UserRole`
+- [x] Add Mongo: 
+- [x] `/api/create/category`
