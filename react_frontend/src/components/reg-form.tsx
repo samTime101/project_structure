@@ -12,12 +12,10 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
-// Make sure this path is correct for your project structure
 import { registerUser } from "@/services/reg-service" 
 // Import the error type we defined in the service file
 import type { DrfValidationError } from "@/services/reg-service"
 
-// Define the type for the component's props for better type safety
 interface RegFormProps extends React.ComponentProps<"div"> {
   onToggleForm: () => void;
 }
@@ -50,7 +48,7 @@ export function RegForm({
 
   
 
-  // --- EVENT HANDLERS (Now with TypeScript event types) ---
+  // Event handlers
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newEmail = e.target.value;
@@ -95,7 +93,7 @@ export function RegForm({
     setUsername(e.target.value);
   };
   
-  // --- FORM SUBMISSION HANDLER (The Core Logic) ---
+  // Form submission
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -129,10 +127,6 @@ export function RegForm({
 
       console.log("Registration successful:", result.message);
       // ===> SUCCESS! <===
-      // You can now handle the successful registration. For example:
-      // - Show a success message
-      // - Redirect the user: router.push('/login')
-      // - Toggle to the login form: onToggleForm()
 
     } catch (error) {
       // 4. Handle errors from the API service

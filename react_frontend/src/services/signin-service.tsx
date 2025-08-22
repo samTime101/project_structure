@@ -1,9 +1,6 @@
 import axios, { AxiosError } from 'axios';
 import type { User } from '@/types/auth';
 
-// ===================================================================
-// 1. DEFINE ALL NECESSARY TYPES
-// ===================================================================
 
 // Interface for the data coming FROM your React form component
 export interface SignInFormData {
@@ -26,17 +23,12 @@ export interface DrfValidationError {
 }
 
 
-// ===================================================================
-// 2. CONFIGURE THE API ENDPOINT
-// ===================================================================
+///APi endpoint configuration
 
-// Use your actual backend URL. Add a trailing slash if your Django urls.py requires it.
+// Use your actual backend URL. 
 const API_URL = 'http://127.0.0.1:8000/api/signin/';
 
 
-// ===================================================================
-// 3. IMPLEMENT THE API FUNCTION
-// ===================================================================
 
 /**
  * Signs in a user by sending their data to the DRF backend.
