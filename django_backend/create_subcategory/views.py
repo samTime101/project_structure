@@ -20,25 +20,21 @@ class CreateSubCategoryView(APIView):
         serializer.is_valid(raise_exception=True)
         subcategory = serializer.save()
         response_data = {
-            "message": "Category created successfully",
+            "message": "Sub Category created successfully",
             "subcategory":{
                 "id": subcategory.subCategoryId,
-                "name": subCategoryId.subCategoryName,
+                "name": subcategory.subCategoryName,
                 "categoryId":subcategory.categoryID.categoryId,
                 "categoryName": subcategory.categoryID.categoryName
             }
         } 
         return Response(response_data, status=status.HTTP_201_CREATED)
 
-    # TODO
-    # FIX THIS FOR TESTING GET REQUEST
-
-    # FOR TESTING
-    # def get(self, request):
-    #     categories = SubCategory.objects.all()
-    #     serializer = CreateSubCategorySerializer(categories, many=True)
-    #     response_data = {
-    #         "message": "Category list retrieved",
-    #         "subcategories": serializer.data
-    #     }
-    #     return Response(response_data, status=status.HTTP_200_OK)
+    def get(self, request):
+        subcategories = SubCategory.objects.all()
+        serializer = CreateSubCategorySerializer(subcategories, many=True)
+        response_data = {
+            "message": "Sub Category list retrieved",
+            "subcategories": serializer.data
+        }
+        return Response(response_data, status=status.HTTP_200_OK)
