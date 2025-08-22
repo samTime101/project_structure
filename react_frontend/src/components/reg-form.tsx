@@ -32,6 +32,8 @@ export function RegForm({
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [username, setUsername] = useState("")
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
 
   // State for client-side and server-side validation errors
   const [emailError, setEmailError] = useState("")
@@ -39,6 +41,8 @@ export function RegForm({
   const [passwordError, setPasswordError] = useState("")
   const [confirmPasswordError, setConfirmPasswordError] = useState("")
   const [usernameError, setUsernameError] = useState("")
+  const [firstNameError, setFirstNameError] = useState("")
+  const [lastNameError, setLastNameError] = useState("")
   
   // State for generic errors (network issues, 500 errors, etc.)
   const [apiError, setApiError] = useState("");
@@ -79,7 +83,13 @@ export function RegForm({
     }
   }
 
-  
+  const handleFirstNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFirstName(e.target.value);
+  };
+
+  const handleLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLastName(e.target.value);
+  };
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
@@ -95,8 +105,8 @@ export function RegForm({
     setEmailError(prev => prev.includes("(from server)") ? "" : prev);
     setPhoneNumberError(prev => prev.includes("(from server)") ? "" : prev);
     setPasswordError(prev => prev.includes("(from server)") ? "" : prev);
-    // setFirstnameError("");
-    // setLastnameError("");
+    setFirstNameError(prev => prev.includes("(from server)") ? "" : prev);
+    setLastNameError(prev => prev.includes("(from server)") ? "" : prev);
     setUsernameError("");
     
     // 2. Prevent submission if client-side validation fails
@@ -113,6 +123,8 @@ export function RegForm({
         phoneNumber,
         password,
         username,
+        firstname: firstName,
+        lastname: lastName,
       });
 
       console.log("Registration successful:", result.message);
@@ -143,6 +155,10 @@ export function RegForm({
             setPasswordError(message);
           } else if (field === 'username') {
             setUsernameError(message);
+          } else if (field === 'firstname') {
+            setFirstNameError(message);
+          } else if (field === 'lastname') {
+            setLastNameError(message);
           } else {
             // Catches 'non_field_errors' or other general errors from DRF
             setApiError(message);
@@ -155,7 +171,7 @@ export function RegForm({
     }
   };
 
-  const isFormInvalid = !email || !phoneNumber || !password || !confirmPassword || !username || !!emailError || !!phoneNumberError || !!passwordError || !!confirmPasswordError;
+  const isFormInvalid = !email || !phoneNumber || !password || !confirmPassword || !username || !firstName || !lastName || !!emailError || !!phoneNumberError || !!passwordError || !!confirmPasswordError || !!firstNameError || !!lastNameError;
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -170,6 +186,19 @@ export function RegForm({
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
             
+              {/* First Name Input */}
+              <div className="grid gap-3">
+                <Label htmlFor="firstname">First Name</Label>
+                <Input id="firstname" type="text" value={firstName} onChange={handleFirstNameChange} />
+                {firstNameError && <p className="text-red-500 text-sm">{firstNameError}</p>}
+              </div>
+
+              {/* Last Name Input */}
+              <div className="grid gap-3">
+                <Label htmlFor="lastname">Last Name</Label>
+                <Input id="lastname" type="text" value={lastName} onChange={handleLastNameChange} />
+                {lastNameError && <p className="text-red-500 text-sm">{lastNameError}</p>}
+              </div>
 
               <div className="grid gap-3">
                 <Label htmlFor="username">Username</Label>

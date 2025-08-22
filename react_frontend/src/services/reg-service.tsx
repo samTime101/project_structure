@@ -11,6 +11,8 @@ export interface RegistrationFormData {
   phoneNumber: string;
   password: string;
   username: string;
+  firstname: string;
+  lastname: string;
 }
 
 
@@ -25,7 +27,9 @@ export interface SignUpResponse {
 // It's a dictionary where keys are field names and values are arrays of error strings.
 export interface DrfValidationError {
   [field: string]: string[];
-  username: string[];
+  username?: string[];
+  firstname?: string[];
+  lastname?: string[];
 }
 
 
@@ -54,6 +58,8 @@ export const registerUser = async (userData: RegistrationFormData): Promise<Sign
     phonenumber: userData.phoneNumber, // Key transformation
     password: userData.password,
     username: userData.username,
+    firstname: userData.firstname,
+    lastname: userData.lastname,
   };
 
   try {
