@@ -1,6 +1,6 @@
 ## API RESPONSE
 
-`API ENDPOINT:/api/signup`
+`API ENDPOINT:/api/signup/`
 
 ## RESPONSE FOR GET REQUEST(405)
 ```json
@@ -13,12 +13,12 @@
 
 ```json
 {
-    "email": "new@new.com",
-    "username": "new101",
-    "phonenumber": "9801234566",
-    "firstname": "Samip",
-    "lastname": "Regmi",
-    "password": "Superman123"
+    "email": "srijanregmi44@gmail.com",
+    "username": "srijanregmi44",
+    "phonenumber": "9816365845",
+    "firstname": "srijanregmi",
+    "lastname": "regmi",
+    "password": "<password>"
 }
 
 ```
@@ -29,12 +29,16 @@
 {
     "message": "User created successfully",
     "user": {
-        "userId": 5,
-        "email": "new@new.com",
-        "username": "new101",
-        "phonenumber": "9801234566",
-        "firstname": "Samip",
-        "lastname": "Regmi"
+        "userId": 4,
+        "email": "srijanregmi44@gmail.com",
+        "username": "srijanregmi44",
+        "phonenumber": "9816365845",
+        "firstname": "srijanregmi",
+        "lastname": "regmi"
+    },
+    "tokens": {
+        "access": "<token>",
+        "refresh": "<token>"
     }
 }
 ```

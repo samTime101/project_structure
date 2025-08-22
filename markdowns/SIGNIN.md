@@ -1,6 +1,6 @@
 ## API RESPONSE
 
-`API ENDPOINT:/api/signin`
+`API ENDPOINT:/api/signin/`
 
 ## RESPONSE FOR GET REQUEST(405)
 ```json
@@ -13,8 +13,8 @@
 
 ```json
 {
-    "email": "samip@example.com",
-    "password": "Superman123"
+    "email": "samipregminp@gmail.com",
+    "password": "<correctpassword>"
 }
 
 ```
@@ -25,15 +25,19 @@
 {
     "message": "User signed in successfully",
     "user": {
-        "userId": 4,
-        "email": "samip@example.com",
-        "username": "samip101",
-        "phonenumber": "9801234567",
-        "firstname": "Samip",
-        "lastname": "Regmi",
+        "userId": 1,
+        "email": "samipregminp@gmail.com",
+        "username": "samipregminp",
+        "phonenumber": "9842265590",
+        "firstname": "samip",
+        "lastname": "regmi",
         "is_active": true,
-        "is_staff": false,
-        "is_superuser": false
+        "is_staff": true,
+        "is_superuser": true
+    },
+    "tokens": {
+        "access": "<token>",
+        "refresh": "<token>"
     }
 }
 ```

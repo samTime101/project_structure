@@ -28,7 +28,15 @@ source <envname>/bin/activate
 ```
 pip install django
 pip install djangorestframework
-python3 -m pip install django-cors-headers
+pip install django-cors-headers
+pip install djangorestframework
+pip install dj-rest-auth
+pip install djangorestframework-simplejwt
+pip install PyJWT  
+pip install mongoengine
+pip install pymongo (MIGHT COME PRE INSTALLED WITH MONGOENGINE BUT DO IT)
+pip install dnspython (MIGHT COME PRE INSTALLED WITH MONGOENGINE BUT DO IT)
+INSTALL MONGODB ANS START IT (FOR WINDOWS , I AM USING LINUX SO I ALREADY HAVE IT) 
 ```
 
 ## REQUIREMENTS(FRONTEND)
@@ -43,6 +51,7 @@ npm install
 python3 manage.py makemigrations sqldb_app
 python3 manage.py migrate
 python3 manage.py createsuperuser
+START MONGODB
 ```
 
 > [!TIP]
