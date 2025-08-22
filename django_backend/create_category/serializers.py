@@ -10,10 +10,13 @@ class CreateCategorySerializer(serializers.ModelSerializer):
         fields = ['categoryId','categoryName']
 
     # SAME CATEGORY NOT ALLOWED , HAVE TO ASK WITH SIR TO DIRECTLY INTEGRATE THIS IN CATEGORY MODEL
-    def validate_categoryName(self, value):
-        if Category.objects.filter(categoryName__iexact=value).exists():
+    # CHANGED TO VALIDATE FOR VALIDATING MULTIPLE FIELDS [FOR FUTURE]
+
+    def validate(self, data):
+        # THE CATEGORY NAME CANNOT BE EXISTING CATEGORY NAME 
+        if Category.objects.filter(categoryName__iexact=data['categoryName']).exists():
             raise serializers.ValidationError("Category with this name already exists")
-        return value
+        return data
 
     def create(self,validated_data):
         category = Category.objects.create(**validated_data)

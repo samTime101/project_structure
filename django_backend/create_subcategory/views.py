@@ -1,0 +1,44 @@
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
+from .serializers import CreateSubCategorySerializer
+from sqldb_app.models import Category , SubCategory
+
+class CreateSubCategoryView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        # ONLY ADMIN AND STAFF CAN CREATE SUBCATEGORY
+        if not request.user.is_superuser and not request.user.is_staff:
+            response_data = {
+                "message": "You do not have permission to create a subcategory",
+            }
+            return Response(response_data, status=status.HTTP_403_FORBIDDEN)
+
+        serializer = CreateSubCategorySerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        subcategory = serializer.save()
+        response_data = {
+            "message": "Category created successfully",
+            "subcategory":{
+                "id": subcategory.subCategoryId,
+                "name": subCategoryId.subCategoryName,
+                "categoryId":subcategory.categoryID.categoryId,
+                "categoryName": subcategory.categoryID.categoryName
+            }
+        } 
+        return Response(response_data, status=status.HTTP_201_CREATED)
+
+    # TODO
+    # FIX THIS FOR TESTING GET REQUEST
+
+    # FOR TESTING
+    # def get(self, request):
+    #     categories = SubCategory.objects.all()
+    #     serializer = CreateSubCategorySerializer(categories, many=True)
+    #     response_data = {
+    #         "message": "Category list retrieved",
+    #         "subcategories": serializer.data
+    #     }
+    #     return Response(response_data, status=status.HTTP_200_OK)
