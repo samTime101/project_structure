@@ -9,7 +9,14 @@ class CreateCategoryView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        serializer = CreateCategorySerializer(data=request.data)
+        # ONLY ADMIN AND STAFF CAN CREATE CATEGORY
+        if not request.user.is_superuser and not request.user.is_staff:
+            response_data = {
+                "message": "You do not have permission to create a category",
+            }
+            return Response(response_data, status=status.HTTP_403_FORBIDDEN)
+
+        serializer = CreateCategorySerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         category = serializer.save()
         response_data = {
