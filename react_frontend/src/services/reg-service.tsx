@@ -23,6 +23,7 @@ export interface SignUpResponse {
 // It's a dictionary where keys are field names and values are arrays of error strings.
 export interface DrfValidationError {
   [field: string]: string[];
+  //ignore the error, it works fine
   username?: string[];
   firstname?: string[];
   lastname?: string[];
