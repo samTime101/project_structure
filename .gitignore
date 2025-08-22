@@ -8,6 +8,9 @@ django_backend/sqldb_app/__pycache__/
 django_backend/sqldb_app/migrations/
 django_backend/user_data_app/__pycache__/
 django_backend/user_data_app/migrations/
+django_backend/mongodb_app/__pycache__/
+django_backend/mongodb_app/migrations/
+django_backend/mongodb_app/*.pyc
 db.sqlite3
 
 # FOR REACT AND NODE

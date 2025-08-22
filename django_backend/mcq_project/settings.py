@@ -17,10 +17,11 @@ INSTALLED_APPS = [
     'rest_framework',  # ADDED BY SAMIP REGMI
     "rest_framework.authtoken", # ADDED BY SAMIP REGMI
     'dj_rest_auth',  # ADDED BY SAMIP REGMI
-    'sqldb_app',  # ADDED BY SAMIP REGMI
     'signup_app', # ADDED BY SAMIP REGMI
     'signin_app', # ADDED BY SAMIP REGMI
-    'user_data'
+    'user_data', #  ADDED BY SAMIP REGMI
+    'sqldb_app',  # ADDED BY SAMIP REGMI
+    'mongodb_app' # ADDED BY SAMIP REGMI
 ]
 
 MIDDLEWARE = [
