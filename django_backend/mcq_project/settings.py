@@ -29,7 +29,8 @@ INSTALLED_APPS = [
     'create_subcategory', #ADDED BY SAMIPREGMI
     'create_subsubcategory', #ADDED BY SAMIPREGMI
     'create_question', #ADDED BY SAMIPREGMI
-    'get_categories' #ADDED BY SAMIPREGMI
+    'get_categories', #ADDED BY SAMIPREGMI
+    'select_questions', #ADDED BY SAMIPREGMI
 ]
 
 MIDDLEWARE = [
