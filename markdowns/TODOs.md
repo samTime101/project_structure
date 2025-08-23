@@ -22,4 +22,4 @@
 - [x] Done `/api/create/subcategory/`
 - [x] Done `/api/create/subsubcategory/`
 - [x] Done `/api/get/categories` **for getting all categories & its derivatives**
-- [ ] Done `/api/create/question/` **for admin**
+- [x] Done `/api/create/question/` **for admin**
