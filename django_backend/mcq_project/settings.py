@@ -16,21 +16,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',  # ADDED BY SAMIP REGMI
-    'rest_framework',  # ADDED BY SAMIP REGMI
-    "rest_framework.authtoken", # ADDED BY SAMIP REGMI
-    'dj_rest_auth',  # ADDED BY SAMIP REGMI
-    'signup_app', # ADDED BY SAMIP REGMI
-    'signin_app', # ADDED BY SAMIP REGMI
-    'user_data', #  ADDED BY SAMIP REGMI
-    'sqldb_app',  # ADDED BY SAMIP REGMI
-    'mongodb_app', # ADDED BY SAMIP REGMI
-    'create_category', #ADDED BY SAMIPREGMI
-    'create_subcategory', #ADDED BY SAMIPREGMI
-    'create_subsubcategory', #ADDED BY SAMIPREGMI
-    'create_question', #ADDED BY SAMIPREGMI
-    'get_categories', #ADDED BY SAMIPREGMI
-    'select_questions', #ADDED BY SAMIPREGMI
+    # ----------------_ADDED BY SAMIP REGMI-------------------
+    'corsheaders', 
+    'rest_framework', 
+    "rest_framework.authtoken",
+    'dj_rest_auth', 
+    'signup_app',
+    'signin_app',
+    'user_data', #  
+    'sqldb_app', 
+    'mongodb_app',
+    'create_category',
+    'create_subcategory',
+    'create_subsubcategory',
+    'create_question',
+    'get_categories',
+    'select_questions',
+    # -------------------------------------------------------
 ]
 
 MIDDLEWARE = [
@@ -51,10 +53,10 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',  # ADDED BY SAMIP REGMI
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',  
     ],
 }
-CORS_ORIGIN_ALLOW_ALL = True  # ADDED BY SAMIP REGMI
+CORS_ORIGIN_ALLOW_ALL = True 
 # -----------------------------------------------------------
 
 ROOT_URLCONF = 'mcq_project.urls'

@@ -23,7 +23,7 @@ class SelectQuestionView(APIView):
         question_list = []
         for question in questions:
             question_list.append({
-                "id": str(question.id),  # Mongo ID
+                "id": str(question.id),  
                 "questionText": question.questionText,
                 "questionType": question.questionType,
                 "options": [{"optionId": option.optionId, "text": option.text} for option in question.options],
