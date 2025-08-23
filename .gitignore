@@ -17,6 +17,9 @@ django_backend/create_category/*.pyc
 django_backend/create_subcategory/__pycache__/
 django_backend/create_subcategory/migrations/
 django_backend/create_subcategory/*.pyc
+django_backend/create_subsubcategory/__pycache__/
+django_backend/create_subsubcategory/migrations/
+django_backend/create_subsubcategory/*.pyc
 db.sqlite3
 
 # FOR REACT AND NODE

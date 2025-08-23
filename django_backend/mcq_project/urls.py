@@ -8,6 +8,7 @@ from signin_app.views import SignInView
 from user_data.views import UserDataView
 from create_category.views import CreateCategoryView
 from create_subcategory.views import CreateSubCategoryView
+from create_subsubcategory.views import CreateSubSubCategoryView
 # -----------------------------------------------------
 
 urlpatterns = [
@@ -22,6 +23,7 @@ urlpatterns = [
 
     path('api/create/category/',CreateCategoryView.as_view(),name='create_category'),
     path('api/create/subcategory/',CreateSubCategoryView.as_view(),name='create_subcategory'),
+    path('api/create/subsubcategory/',CreateSubSubCategoryView.as_view(),name='create_subsubcategory'),
 
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
