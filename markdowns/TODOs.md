@@ -1,9 +1,8 @@
 ## TODO FOR DJANGO
 
 ### DJANGO(ROUTES)
-- [ ] `/api/create/question/` **for admin**
-- [ ] `/api/select/questions/` **when doing quiz**
-- [ ] `/api/get/questions/`  **get questions with preferred selections**
+- [ ] `/api/select/questions/` **returns questions from user selected categories**
+- [ ] `/api/get/questions/` **simply returns all available questions**
 
 ### COMPLETED
 - [x] seperate `sqldb_app`
@@ -23,3 +22,4 @@
 - [x] Done `/api/create/subcategory/`
 - [x] Done `/api/create/subsubcategory/`
 - [x] Done `/api/get/categories` **for getting all categories & its derivatives**
+- [ ] Done `/api/create/question/` **for admin**
