@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'create_category', #ADDED BY SAMIPREGMI
     'create_subcategory', #ADDED BY SAMIPREGMI
     'create_subsubcategory', #ADDED BY SAMIPREGMI
+    'create_question', #ADDED BY SAMIPREGMI
     'get_categories' #ADDED BY SAMIPREGMI
 ]
 

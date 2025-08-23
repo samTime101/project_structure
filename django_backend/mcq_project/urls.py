@@ -10,6 +10,7 @@ from create_category.views import CreateCategoryView
 from create_subcategory.views import CreateSubCategoryView
 from create_subsubcategory.views import CreateSubSubCategoryView
 from get_categories.views import GetCategoriesView
+from create_question.views import CreateQuestionView
 # -----------------------------------------------------
 
 urlpatterns = [
@@ -26,6 +27,7 @@ urlpatterns = [
     path('api/create/category/',CreateCategoryView.as_view(),name='create_category'),
     path('api/create/subcategory/',CreateSubCategoryView.as_view(),name='create_subcategory'),
     path('api/create/subsubcategory/',CreateSubSubCategoryView.as_view(),name='create_subsubcategory'),
+    path('api/create/question/',CreateQuestionView.as_view(),name='create_question'),
 
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
