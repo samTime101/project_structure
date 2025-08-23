@@ -1,17 +1,10 @@
-## TODO
+## TODO FOR DJANGO
 
 ### DJANGO(ROUTES)
-- [ ] `/api/create/subsubcategory/`
+- [ ] `/api/get/categories` **for getting all categories & its derivatives**
 - [ ] `/api/create/question/` **for admin**
 - [ ] `/api/select/questions/` **when doing quiz**
 - [ ] `/api/get/questions/`  **get questions with preferred selections**
-
-### FRONTEND (REACT)
-- [ ] Implement Signup frontend using API
-  - `/api/signup/`
-- [ ] Implement Signin frontend using API
-  - `/api/signin/`
-
 
 ### COMPLETED
 - [x] seperate `sqldb_app`
@@ -20,14 +13,13 @@
 - [x] created model for `Category`
 - [x] created model for `SubCategory`
 - [x] created model for `SubSubCategory`
-- [x] Add `/api/signin/` in `mcq_project/urls.py`
-- [x] Added `jwt` 
+- [x] created model for `Role`
+- [x] created model for `UserRole` 
+- [x] Add Mongo: 
+- [x] Done `jwt` 
 - [x] Done `/api/signin/`
 - [x] Done `/api/signup/`
 - [x] Done `/api/user/`
 - [x] Done `/api/create/category/`
 - [x] Done `/api/create/subcategory/`
-- [x] Add models: 
-  - `Role`
-  - `UserRole`
-- [x] Add Mongo: 
+- [x] Done `/api/create/subsubcategory/`
