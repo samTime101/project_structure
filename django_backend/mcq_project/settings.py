@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'mongodb_app', # ADDED BY SAMIP REGMI
     'create_category', #ADDED BY SAMIPREGMI
     'create_subcategory', #ADDED BY SAMIPREGMI
-    'create_subsubcategory' #ADDED BY SAMIPREGMI
+    'create_subsubcategory', #ADDED BY SAMIPREGMI
+    'get_categories' #ADDED BY SAMIPREGMI
 ]
 
 MIDDLEWARE = [
