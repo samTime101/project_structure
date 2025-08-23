@@ -1,7 +1,6 @@
 ## TODO FOR DJANGO
 
 ### DJANGO(ROUTES)
-- [ ] `/api/get/categories` **for getting all categories & its derivatives**
 - [ ] `/api/create/question/` **for admin**
 - [ ] `/api/select/questions/` **when doing quiz**
 - [ ] `/api/get/questions/`  **get questions with preferred selections**
@@ -23,3 +22,4 @@
 - [x] Done `/api/create/category/`
 - [x] Done `/api/create/subcategory/`
 - [x] Done `/api/create/subsubcategory/`
+- [x] Done `/api/get/categories` **for getting all categories & its derivatives**
