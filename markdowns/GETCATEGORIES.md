@@ -1,6 +1,10 @@
-## API RESPONSE
+## API RESPONSE(THIS ROUTE REQUIRES AUTHENTICATION TOKEN)
 
 `API ENDPOINT:/api/get/categories/`
+
+`
+Authorization Bearer:<access_token>
+`
 
 ## RESPONSE FOR GET REQUEST(200)
 ```json

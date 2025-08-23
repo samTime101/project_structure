@@ -27,7 +27,7 @@ class CreateQuestionView(APIView):
         question = serializer.save()
         
 
-        #RETURNING CUSTOM RESPONSE
+        # RETURNING CUSTOM RESPONSE
         response_data = {
             "message": "Question created successfully",
             "question": {
