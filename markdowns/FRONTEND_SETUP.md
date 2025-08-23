@@ -23,6 +23,7 @@ Follow these steps to get the frontend development server running:
     Install all the necessary project dependencies by running the following command:
     ```bash
     npm install
+    npm install react-router-dom
     ```
 
 3.  **Start the development server:**

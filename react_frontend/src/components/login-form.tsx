@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -22,6 +23,7 @@ export function LoginForm({
   const [password, setPassword] = useState("")
   const [apiError, setApiError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate()
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
@@ -39,8 +41,13 @@ export function LoginForm({
     try {
       const result = await signInUser({ email, password })
       console.log("Welcome!", result.user.username)
-      // Optionally, you can redirect the user or perform other actions here
-      // For example: router.push('/dashboard')
+      if (result.user.is_superuser) {
+        navigate("/superuserpanel")
+      } else if (result.user.is_staff) {
+        navigate("/teacherpanel")
+      } else {
+        navigate("/userpanel")
+      }
     } catch (error) {
       if (error instanceof Error) {
         setApiError(error.message)

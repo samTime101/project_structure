@@ -1,48 +1,28 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
-// import LoginForm from './components/login-form'
-import Page from './app/login/page'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Page from './app/login/page';
+import { UserPanel } from './components/user-panel';
+import { TeacherPanel } from './components/teacher-panel';
+import { SuperUserPanel } from './components/superuser-panel';
+import ProtectedRoute from './components/ProtectedRoute';
 
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-//Need to return page.tsx that is in src/app/login/page.tsx
 function App() {
   return (
-    <div className="flex min-h-screen w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
-        <Page />
+    <BrowserRouter>
+      <div className="flex min-h-screen w-full items-center justify-center p-6 md:p-10">
+        <div className="w-full max-w-sm">
+          <Routes>
+            <Route path="/" element={<Page />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/userpanel" element={<UserPanel />} />
+              <Route path="/teacherpanel" element={<TeacherPanel />} />
+              <Route path="/superuserpanel" element={<SuperUserPanel />} />
+            </Route>
+          </Routes>
+        </div>
       </div>
-    </div>
-  )
+    </BrowserRouter>
+  );
 }
-    
 
-export default App
+export default App;
