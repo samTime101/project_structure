@@ -13,10 +13,10 @@ class CreateSubSubCategoryView(APIView):
     def post(self, request):
         # ONLY ADMIN AND STAFF CAN CREATE SUBSUBCATEGORY
         if not request.user.is_superuser and not request.user.is_staff:
-            return Response(
-                {"message": "You do not have permission to create a sub-subcategory"},
-                status=status.HTTP_403_FORBIDDEN
-            )
+            response_data = {
+                "message": "You do not have permission to create a subcategory",
+            }
+            return Response(response_data, status=status.HTTP_403_FORBIDDEN)
 
         serializer = CreateSubSubCategorySerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
