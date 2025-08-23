@@ -1,10 +1,10 @@
 ![Author](https://img.shields.io/badge/author-samip--regmi-blue)
 
-> [!CAUTION]
-> CODE FROM BRANCHES  `main` ,`feat/jwt`, `feat/user_role_models` ARE OUTDATED
+> [!NOTE]  
+> STABLE BACKEND CODE AT `stable/backend`
 
 > [!IMPORTANT]  
-> LATEST CODE AT `development/mongo`
+> LATEST BACKEND CODE AT `development/backend`
 
 
 TODOS FOR THE PROJECT AT  [TODOs.md](./markdowns/TODOs.md) 
