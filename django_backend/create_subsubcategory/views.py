@@ -14,7 +14,7 @@ class CreateSubSubCategoryView(APIView):
         # ONLY ADMIN AND STAFF CAN CREATE SUBSUBCATEGORY
         if not request.user.is_superuser and not request.user.is_staff:
             response_data = {
-                "message": "You do not have permission to create a subcategory",
+                "message": "You do not have permission to create a subsubcategory",
             }
             return Response(response_data, status=status.HTTP_403_FORBIDDEN)
 
