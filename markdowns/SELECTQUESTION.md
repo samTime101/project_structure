@@ -2,7 +2,7 @@
 ## API RESPONSE(THIS ROUTE REQUIRES AUTHENTICATION TOKEN)
 
 
-`API ENDPOINT:/api/select/question/`
+`API ENDPOINT:/api/select/questions/`
 
 `
 Authorization Bearer:<access_token>
