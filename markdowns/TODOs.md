@@ -1,3 +1,9 @@
+### TODOs
+- [ ] Fix signin issue ([#1](https://github.com/samTime101/project_structure/issues/1))
+- [ ] Fix create question serializer issue ([#2](https://github.com/samTime101/project_structure/issues/2))
+- [ ] Fix signup auth token issue ([#3](https://github.com/samTime101/project_structure/issues/3))
+- [ ] Add funnctionality to promote normal user to **staff** or **superuser**
+
 ### COMPLETED
 - [x] seperate `sqldb_app`
 - [x] Separate `signin_app`
