@@ -13,7 +13,7 @@
 
 ```json
 {
-    "email": "samipregminp@gmail.com",
+    "email": "<email>",
     "password": "<correctpassword>"
 }
 
@@ -26,9 +26,9 @@
     "message": "User signed in successfully",
     "user": {
         "userId": 1,
-        "email": "samipregminp@gmail.com",
+        "email": "<email>",
         "username": "samipregminp",
-        "phonenumber": "9842265590",
+        "phonenumber": "<phonenumber>",
         "firstname": "samip",
         "lastname": "regmi",
         "is_active": true,

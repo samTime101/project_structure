@@ -13,9 +13,9 @@
 
 ```json
 {
-    "email": "srijanregmi44@gmail.com",
+    "email": "<email>",
     "username": "srijanregmi44",
-    "phonenumber": "9816365845",
+    "phonenumber": "<phonenumber>",
     "firstname": "srijanregmi",
     "lastname": "regmi",
     "password": "<password>"
@@ -30,9 +30,9 @@
     "message": "User created successfully",
     "user": {
         "userId": 4,
-        "email": "srijanregmi44@gmail.com",
+        "email": "<email>",
         "username": "srijanregmi44",
-        "phonenumber": "9816365845",
+        "phonenumber": "<phonenumber>",
         "firstname": "srijanregmi",
         "lastname": "regmi"
     },
