@@ -5,6 +5,7 @@ import { UserPanel } from './components/user-panel';
 import { TeacherPanel } from './components/teacher-panel';
 import { SuperUserPanel } from './components/superuser-panel';
 import ProtectedRoute from './components/ProtectedRoute';
+import RootRedirect from './components/RootRedirect';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <div className="flex min-h-screen w-full items-center justify-center p-6 md:p-10">
         <div className="w-full max-w-sm">
           <Routes>
-            <Route path="/" element={<Page />} />
+            <Route path="/" element={<RootRedirect />} />
+            <Route path="/login" element={<Page />} />
             <Route element={<ProtectedRoute />}>
               <Route path="/userpanel" element={<UserPanel />} />
               <Route path="/teacherpanel" element={<TeacherPanel />} />

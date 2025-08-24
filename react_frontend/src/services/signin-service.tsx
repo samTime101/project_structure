@@ -46,10 +46,11 @@ export const signInUser = async (userData: SignInFormData): Promise<SignInRespon
     // Step B: Make the POST request with the correct types and transformed data
     const response = await axios.post<SignInResponse>(API_URL, userData);
     
-    // Store tokens in local storage
-    if (response.data.tokens) {
+    // Store tokens and user data in local storage
+    if (response.data.tokens && response.data.user) {
       localStorage.setItem('accessToken', response.data.tokens.access);
       localStorage.setItem('refreshToken', response.data.tokens.refresh);
+      localStorage.setItem('user', JSON.stringify(response.data.user));
     }
 
     return response.data;
