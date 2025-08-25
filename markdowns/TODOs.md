@@ -1,7 +1,4 @@
 ### TODOs
-- [ ] Fix signin issue ([#1](https://github.com/samTime101/project_structure/issues/1))
-- [ ] Fix create question serializer issue ([#2](https://github.com/samTime101/project_structure/issues/2))
-- [ ] Fix signup auth token issue ([#3](https://github.com/samTime101/project_structure/issues/3))
 - [ ] Add funnctionality to promote normal user to **staff** or **superuser**
 
 ### COMPLETED
@@ -24,3 +21,6 @@
 - [x] Done `/api/get/categories` **for getting all categories & its derivatives**
 - [x] Done `/api/create/question/` **for admin**
 - [x] Done `/api/select/questions/` **returns questions from user selected categories**
+- [x] Fix signin issue ([#1](https://github.com/samTime101/project_structure/issues/1))
+- [x] Fix create question serializer issue ([#2](https://github.com/samTime101/project_structure/issues/2))
+- [x] Fix signup auth token issue ([#3](https://github.com/samTime101/project_structure/issues/3))
