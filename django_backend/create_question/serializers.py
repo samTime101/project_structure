@@ -1,6 +1,7 @@
 # SAMIP REGMI
 # AUGUST 23
 
+# MODIFIED AUGUST 25
 
 # TODO: https://stackoverflow.com/questions/27896603/how-to-validate-the-length-of-nested-items-in-a-serializer
 # RESRTICT TO ONLY 4 OPTIONS 
@@ -10,18 +11,19 @@ from rest_framework import serializers
 from mongodb_app.mongo import Option, Question
 from sqldb_app.models import Category, SubCategory, SubSubCategory  # SQL models
 
+# ADDING REQUIREED TRUE SO THAT IT DOES NOT ACCEPT NULL
 
 class OptionSerializer(serializers.Serializer):
-    optionId = serializers.CharField()
-    text = serializers.CharField()
+    optionId = serializers.CharField(required=True)
+    text = serializers.CharField(required=True)
 
 class CreateQuestionSerializer(serializers.Serializer):
 
-    questionText = serializers.CharField()
-    questionType = serializers.ChoiceField(choices=["single", "multiple"])
-    options = OptionSerializer(many=True)
-    correctAnswers = serializers.ListField(child=serializers.CharField())
-    # DEFAULT EASY 
+    questionText = serializers.CharField(required=True)
+    questionType = serializers.ChoiceField(choices=["single", "multiple"], required=True)
+    options = OptionSerializer(many=True, required=True)
+    correctAnswers = serializers.ListField(child=serializers.CharField(), required=True)
+    # DEFAULT EASY
     difficulty = serializers.ChoiceField(choices=["easy", "medium", "hard"], default="easy")
 
     categoryId = serializers.IntegerField(required=True)
